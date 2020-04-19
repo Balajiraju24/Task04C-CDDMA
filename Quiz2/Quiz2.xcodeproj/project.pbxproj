@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AD2BF53D24468E360062B7B3 /* 8586565414ee0ce6bc0ded654e0da239.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2BF53C24468E360062B7B3 /* 8586565414ee0ce6bc0ded654e0da239.png */; };
 		AD2BF544244701670062B7B3 /* firstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2BF543244701670062B7B3 /* firstViewController.swift */; };
 		AD322423243EC65200CE0049 /* Quiz2Unittest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD322422243EC65200CE0049 /* Quiz2Unittest.swift */; };
 		ADB96E9A2432F11300C59E50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB96E992432F11300C59E50 /* AppDelegate.swift */; };
@@ -38,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AD2BF53C24468E360062B7B3 /* 8586565414ee0ce6bc0ded654e0da239.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 8586565414ee0ce6bc0ded654e0da239.png; path = ../../../../.Trash/8586565414ee0ce6bc0ded654e0da239.png; sourceTree = "<group>"; };
 		AD2BF543244701670062B7B3 /* firstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = firstViewController.swift; path = ../../firstViewController.swift; sourceTree = "<group>"; };
 		AD322418243EC63500CE0049 /* Quiz2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Quiz2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD32241C243EC63500CE0049 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 		AD2BF53724468D620062B7B3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AD2BF53C24468E360062B7B3 /* 8586565414ee0ce6bc0ded654e0da239.png */,
 				ADB96EA22432F11700C59E50 /* Assets.xcassets */,
 				ADB96E9F2432F11300C59E50 /* Main.storyboard */,
 			);
@@ -272,7 +269,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD2BF53D24468E360062B7B3 /* 8586565414ee0ce6bc0ded654e0da239.png in Resources */,
 				ADB96EA32432F11700C59E50 /* Assets.xcassets in Resources */,
 				ADB96EA12432F11300C59E50 /* Main.storyboard in Resources */,
 			);

@@ -48,7 +48,7 @@ class Quiz2Unittest: XCTestCase {
         let _ = vc.view
         //1. given
         
-        let guess = data.percent + 20
+        let guess = 20
         let index = data.currentquestion + 1
         
         //2. when
