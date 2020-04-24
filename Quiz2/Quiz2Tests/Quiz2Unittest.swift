@@ -9,90 +9,62 @@
 import XCTest
 @testable import Quiz2
 
+var quizData: QuizData!
+
 class Quiz2Unittest: XCTestCase {
-    
-    var vct: ViewController?
     
     override func setUp()
     {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Quiz") as! ViewController
-        vct = vc
-        let _ = vc.view
+        super.setUp()
+        quizData = QuizData()
     }
     
-    func testQuizScoreIsCalculated()
-    {
-        print()
-        if let vctesting = vct
-        {
-            let index = data.currentquestion + 1
-            //1. given
-        
-            let guess = data.points + 1
-            //2. when
-        
-            vctesting.newquestion(currentQuestionIndex: index)
-            vctesting.action(vctesting.answerButton3)
-        
-            //3. then
-        
-            XCTAssertEqual(data.points, guess, "Score calculated from guess is correct")
-        }
+    override func tearDown() {
+        quizData = nil
+        super.tearDown()
     }
     
+    //test case for calculating the percentage
     func testQuizPercentageIsCalculated()
     {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Quiz") as! ViewController
-        let _ = vc.view
         //1. given
-        
-        let guess = 20
-        let index = data.currentquestion + 1
+        let guess = quizData.getPercent() + 20
         
         //2. when
-        vc.newquestion(currentQuestionIndex: index)
-        vc.action(vc.answerButton3)
-        vc.percentage(score: data.points)
+        quizData.calculatePercentage(points: 1)
         
         //3. then
-        XCTAssertEqual(data.percent, guess, "Percentage calculated from guess is correct")
+        XCTAssertEqual(quizData.getPercent(), guess, "Percentage calculated from guess is correct")
     }
     
+    //showing correct answer for that specific questions in the given block
     func testQuizAnswerChoiceIsShown()
     {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Quiz") as! ViewController
-        let _ = vc.view
-        
         //1. given
-        let guess = "Scott Morrison"
-        let index = data.currentquestion + 1
+        let question = "what's the capital of Australia"
+        let index = quizData.getQuestions().firstIndex(of: question)
+        let guess = ["Canberra","Melbourne","Sydeny"]
         
         //2. when
-        vc.newquestion(currentQuestionIndex: index)
+        let answers: [String] = quizData.getAnswers()[index!]
         
         //3. then
-        XCTAssertEqual(vc.answerButton3.currentTitle, guess, "Answer choice from guess is correct")
+        XCTAssertEqual(answers, guess, "Answer choice from guess is correct")
     }
     
-    func testQuizDisplaysQuestion()
+    //guessing the right answer for that sepcific question
+    func testQuizRightAnswer()
     {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Quiz") as! ViewController
-        let _ = vc.view
         //1. given
+        let question = "Who is the Prime Minister of Australia"
+        let index = quizData.getQuestions().firstIndex(of: question)
+        let guess = "Scott Morrison"
         
-        let guess = "Who is the Prime Minister of Australia"
-        let index = data.currentquestion + 1
         //2. when
-        
-        vc.newquestion(currentQuestionIndex: index)
+        let answer = quizData.getAnswers()[index!][0]
         
         //3. then
-        
-        XCTAssertEqual(vc.lbl.text, guess, "Question from guess is correct")
+        XCTAssertEqual(answer, guess, "Question from guess is correct")
         
     }
 }

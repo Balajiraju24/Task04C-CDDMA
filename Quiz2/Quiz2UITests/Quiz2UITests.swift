@@ -15,19 +15,7 @@ class Quiz2UITests: XCTestCase {
          XCUIApplication().launch()
     }
     
-    /*
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // UI tests must launch the application that they test.
-        let app = XCUIApplication()
-        app.launch()
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-     }*/
-    
+    //checking the answer exists after the answer is clicked
     func testAnswerExists()
     {
         //given
@@ -46,6 +34,7 @@ class Quiz2UITests: XCTestCase {
         app.buttons["Melbourne"].tap()
     }
     
+    //percentage calculation and in the segue
     func testUIPercentage()
     {
         //given
@@ -66,6 +55,7 @@ class Quiz2UITests: XCTestCase {
         XCTAssertEqual(answer, guess, "The score is correct")
     }
     
+    //restart valid UI Test
     func testRestartValid()
     {
         //given
